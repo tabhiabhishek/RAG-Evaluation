@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f141a"/>
+      <stop offset="1" stop-color="#14202e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="320" rx="18" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1279" height="319" rx="18" fill="none" stroke="#2a323d"/>
+
+  <!-- judge scorecard motif -->
+  <rect x="72" y="84" width="220" height="152" rx="14" fill="#161c24" stroke="#2a323d"/>
+  <rect x="72" y="84" width="220" height="6" rx="3" fill="url(#accent)"/>
+  <text x="92" y="116" font-size="12" font-weight="700" fill="#9ca3af" letter-spacing="1">LLM JUDGE</text>
+  <rect x="234" y="101" width="40" height="20" rx="10" fill="#0f2a1c" stroke="#166534"/>
+  <text x="254" y="115" text-anchor="middle" font-size="11" font-weight="700" fill="#4ade80">1-5</text>
+  <g font-size="12" font-weight="600" fill="#d1d5db">
+    <text x="92" y="150">F</text>
+    <rect x="112" y="140" width="144" height="12" rx="6" fill="#1e2630"/>
+    <rect x="112" y="140" width="144" height="12" rx="6" fill="#22c55e"/>
+    <text x="266" y="151" fill="#e5e7eb">5</text>
+    <text x="92" y="180">R</text>
+    <rect x="112" y="170" width="144" height="12" rx="6" fill="#1e2630"/>
+    <rect x="112" y="170" width="115" height="12" rx="6" fill="#38bdf8"/>
+    <text x="266" y="181" fill="#e5e7eb">4</text>
+    <text x="92" y="210">C</text>
+    <rect x="112" y="200" width="144" height="12" rx="6" fill="#1e2630"/>
+    <rect x="112" y="200" width="86" height="12" rx="6" fill="#f59e0b"/>
+    <text x="266" y="211" fill="#e5e7eb">3</text>
+  </g>
+
+  <!-- arrow -->
+  <path d="M312 160 h36" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M342 150 l12 10 l-12 10" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="390" y="150" font-size="60" font-weight="700" fill="#f3f4f6">RAG <tspan fill="url(#accent)">Evaluation</tspan></text>
+  <text x="392" y="196" font-size="24" fill="#9ca3af">Score and compare RAG prompt versions with a local LLM-as-a-Judge</text>
+
+  <g font-size="15" font-weight="600">
+    <rect x="392" y="226" width="158" height="32" rx="16" fill="#0f2a1c" stroke="#166534"/>
+    <text x="471" y="247" text-anchor="middle" fill="#4ade80">Ollama · Qwen 2.5</text>
+    <rect x="562" y="226" width="150" height="32" rx="16" fill="#0c2233" stroke="#075985"/>
+    <text x="637" y="247" text-anchor="middle" fill="#7dd3fc">LLM-as-a-Judge</text>
+    <rect x="724" y="226" width="110" height="32" rx="16" fill="#2a1f0b" stroke="#92400e"/>
+    <text x="779" y="247" text-anchor="middle" fill="#fbbf24">Streamlit</text>
+    <rect x="846" y="226" width="96" height="32" rx="16" fill="#241433" stroke="#6b21a8"/>
+    <text x="894" y="247" text-anchor="middle" fill="#d8b4fe">Pandas</text>
+    <rect x="954" y="226" width="196" height="32" rx="16" fill="#1e2630" stroke="#2a323d"/>
+    <text x="1052" y="247" text-anchor="middle" fill="#d1d5db">PyYAML prompt registry</text>
+  </g>
+</svg>

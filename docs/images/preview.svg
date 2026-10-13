@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="700" viewBox="0 0 1280 700" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <!-- window -->
+  <rect width="1280" height="700" rx="14" fill="#0f141a"/>
+  <rect x="0.5" y="0.5" width="1279" height="699" rx="14" fill="none" stroke="#2a323d"/>
+  <rect width="1280" height="40" rx="14" fill="#161c24"/>
+  <rect y="26" width="1280" height="14" fill="#161c24"/>
+  <circle cx="22" cy="20" r="6" fill="#ef4444"/><circle cx="42" cy="20" r="6" fill="#f59e0b"/><circle cx="62" cy="20" r="6" fill="#22c55e"/>
+  <text x="640" y="25" text-anchor="middle" font-size="13" fill="#9ca3af">RAG Evaluator — localhost:8501</text>
+  <line x1="0" y1="40" x2="1280" y2="40" stroke="#2a323d"/>
+
+  <!-- page header -->
+  <g fill="url(#accent)">
+    <rect x="32" y="80" width="7" height="14" rx="2"/>
+    <rect x="42" y="72" width="7" height="22" rx="2"/>
+    <rect x="52" y="64" width="7" height="30" rx="2"/>
+  </g>
+  <text x="72" y="93" font-size="28" font-weight="700" fill="#f3f4f6">RAG/LLM Evaluation &amp; Prompt Versioning</text>
+  <text x="32" y="126" font-size="14" fill="#9ca3af">Compare different prompt versions using a <tspan font-weight="700" fill="#e5e7eb">Custom LLM-as-a-Judge</tspan> (Faithfulness, Answer Relevance, Context Precision).</text>
+
+  <!-- LEFT COLUMN -->
+  <text x="32" y="172" font-size="18" font-weight="700" fill="#f3f4f6">Select Prompt Version to Evaluate</text>
+  <text x="32" y="200" font-size="13" fill="#9ca3af">Prompt Version</text>
+  <rect x="32" y="210" width="592" height="40" rx="8" fill="#161c24" stroke="#2a323d"/>
+  <text x="48" y="235" font-size="14" fill="#e5e7eb">Strict No-Hallucination Prompt</text>
+  <path d="M596 226 l6 6 l6 -6" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="32" y="266" width="592" height="300" rx="10" fill="#0c2233" stroke="#075985"/>
+  <text x="52" y="296" font-size="13" fill="#bae6fd"><tspan font-weight="700">Description:</tspan> Forces the LLM to say 'I don't know' if the answer isn't in the context.</text>
+  <text x="52" y="326" font-size="13" font-weight="700" fill="#bae6fd">Template:</text>
+  <rect x="52" y="338" width="552" height="208" rx="8" fill="#0b0f14" stroke="#1e3a52"/>
+  <text x="68" y="360" font-size="10" fill="#6b7280" letter-spacing="1">PROMPTS.YAML · V2_STRICT</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="12.5" fill="#d1d5db">
+    <text x="68" y="386">You are a strict, factual assistant. Answer the question</text>
+    <text x="68" y="406">using ONLY the provided context.</text>
+    <text x="68" y="426">If the answer cannot be found in the context, you MUST reply</text>
+    <text x="68" y="446">with exactly: "I don't know based on the provided context."</text>
+    <text x="68" y="472">Context: <tspan fill="#4ade80">{context}</tspan></text>
+    <text x="68" y="492">Question: <tspan fill="#4ade80">{question}</tspan></text>
+    <text x="68" y="518">Answer:</text>
+  </g>
+
+  <g font-size="12" fill="#9ca3af">
+    <text x="32" y="600" font-weight="700" fill="#6b7280" letter-spacing="1">AVAILABLE VERSIONS</text>
+    <rect x="32" y="614" width="200" height="30" rx="15" fill="#1e2630" stroke="#2a323d"/>
+    <text x="132" y="634" text-anchor="middle" fill="#d1d5db">v1_basic · Basic RAG Prompt</text>
+    <rect x="244" y="614" width="250" height="30" rx="15" fill="#0f2a1c" stroke="#166534"/>
+    <text x="369" y="634" text-anchor="middle" fill="#4ade80">v2_strict · Strict No-Hallucination</text>
+  </g>
+
+  <!-- RIGHT COLUMN -->
+  <text x="656" y="172" font-size="18" font-weight="700" fill="#f3f4f6">Action</text>
+  <rect x="656" y="188" width="252" height="40" rx="8" fill="url(#accent)"/>
+  <text x="782" y="213" text-anchor="middle" font-size="14" font-weight="700" fill="#0b0f14">Run Custom LLM Evaluation</text>
+
+  <rect x="656" y="242" width="592" height="40" rx="8" fill="#0f2a1c" stroke="#166534"/>
+  <text x="676" y="267" font-size="14" fill="#4ade80">Evaluation Complete!</text>
+
+  <text x="656" y="316" font-size="17" font-weight="700" fill="#f3f4f6">Average Scores</text>
+  <g font-size="12">
+    <rect x="656" y="330" width="189" height="92" rx="10" fill="#161c24" stroke="#2a323d"/>
+    <text x="672" y="354" fill="#9ca3af">Avg Faithfulness</text>
+    <text x="672" y="390" font-size="24" font-weight="700" fill="#f3f4f6">5.00 <tspan font-size="14" font-weight="400" fill="#9ca3af">/ 5.0</tspan></text>
+    <rect x="672" y="404" width="157" height="5" rx="2.5" fill="#1e2630"/><rect x="672" y="404" width="157" height="5" rx="2.5" fill="#22c55e"/>
+
+    <rect x="857" y="330" width="189" height="92" rx="10" fill="#161c24" stroke="#2a323d"/>
+    <text x="873" y="354" fill="#9ca3af">Avg Relevance</text>
+    <text x="873" y="390" font-size="24" font-weight="700" fill="#f3f4f6">4.33 <tspan font-size="14" font-weight="400" fill="#9ca3af">/ 5.0</tspan></text>
+    <rect x="873" y="404" width="157" height="5" rx="2.5" fill="#1e2630"/><rect x="873" y="404" width="136" height="5" rx="2.5" fill="#38bdf8"/>
+
+    <rect x="1058" y="330" width="190" height="92" rx="10" fill="#161c24" stroke="#2a323d"/>
+    <text x="1074" y="354" fill="#9ca3af">Avg Context Precision</text>
+    <text x="1074" y="390" font-size="24" font-weight="700" fill="#f3f4f6">3.67 <tspan font-size="14" font-weight="400" fill="#9ca3af">/ 5.0</tspan></text>
+    <rect x="1074" y="404" width="158" height="5" rx="2.5" fill="#1e2630"/><rect x="1074" y="404" width="116" height="5" rx="2.5" fill="#f59e0b"/>
+  </g>
+
+  <text x="656" y="458" font-size="17" font-weight="700" fill="#f3f4f6">Detailed Breakdown</text>
+  <!-- dataframe -->
+  <rect x="656" y="472" width="592" height="180" rx="8" fill="#161c24" stroke="#2a323d"/>
+  <rect x="656.5" y="472.5" width="591" height="35" rx="8" fill="#1e2630"/>
+  <rect x="656.5" y="496" width="591" height="12" fill="#1e2630"/>
+  <line x1="656" y1="508" x2="1248" y2="508" stroke="#2a323d"/>
+  <line x1="656" y1="556" x2="1248" y2="556" stroke="#2a323d"/>
+  <line x1="656" y1="604" x2="1248" y2="604" stroke="#2a323d"/>
+  <g stroke="#2a323d">
+    <line x1="774" y1="472" x2="774" y2="652"/>
+    <line x1="886" y1="472" x2="886" y2="652"/>
+    <line x1="1002" y1="472" x2="1002" y2="652"/>
+    <line x1="1082" y1="472" x2="1082" y2="652"/>
+    <line x1="1150" y1="472" x2="1150" y2="652"/>
+  </g>
+  <g font-size="11" font-weight="700" fill="#9ca3af">
+    <text x="666" y="495">Question</text>
+    <text x="784" y="495">Context</text>
+    <text x="896" y="495">Answer</text>
+    <text x="1042" y="495" text-anchor="middle">Faithfulness</text>
+    <text x="1116" y="495" text-anchor="middle">Relevance</text>
+    <text x="1199" y="495" text-anchor="middle" font-size="10.5">Context Precision</text>
+  </g>
+  <g font-size="12" fill="#d1d5db">
+    <text x="666" y="537">What is the capit…</text>
+    <text x="784" y="537" fill="#9ca3af">Paris is the capit…</text>
+    <text x="896" y="537">Paris</text>
+    <text x="666" y="585">Who invented the…</text>
+    <text x="784" y="585" fill="#9ca3af">The telephone wa…</text>
+    <text x="896" y="585">Alexander Graha…</text>
+    <text x="666" y="633">What is the speed…</text>
+    <text x="784" y="633" fill="#9ca3af">The Earth revolv…</text>
+    <text x="896" y="633">I don't know bas…</text>
+  </g>
+  <!-- score chips -->
+  <g font-size="12" font-weight="700" text-anchor="middle">
+    <rect x="1028" y="520" width="28" height="24" rx="12" fill="#0f2a1c" stroke="#166534"/><text x="1042" y="537" fill="#4ade80">5</text>
+    <rect x="1102" y="520" width="28" height="24" rx="12" fill="#0f2a1c" stroke="#166534"/><text x="1116" y="537" fill="#4ade80">5</text>
+    <rect x="1185" y="520" width="28" height="24" rx="12" fill="#0f2a1c" stroke="#166534"/><text x="1199" y="537" fill="#4ade80">5</text>
+
+    <rect x="1028" y="568" width="28" height="24" rx="12" fill="#0f2a1c" stroke="#166534"/><text x="1042" y="585" fill="#4ade80">5</text>
+    <rect x="1102" y="568" width="28" height="24" rx="12" fill="#0f2a1c" stroke="#166534"/><text x="1116" y="585" fill="#4ade80">5</text>
+    <rect x="1185" y="568" width="28" height="24" rx="12" fill="#0f2a1c" stroke="#166534"/><text x="1199" y="585" fill="#4ade80">5</text>
+
+    <rect x="1028" y="616" width="28" height="24" rx="12" fill="#0f2a1c" stroke="#166534"/><text x="1042" y="633" fill="#4ade80">5</text>
+    <rect x="1102" y="616" width="28" height="24" rx="12" fill="#2a1f0b" stroke="#92400e"/><text x="1116" y="633" fill="#fbbf24">3</text>
+    <rect x="1185" y="616" width="28" height="24" rx="12" fill="#2a1414" stroke="#991b1b"/><text x="1199" y="633" fill="#f87171">1</text>
+  </g>
+  <text x="1248" y="676" text-anchor="end" font-size="12" fill="#6b7280">Judge: qwen2.5 via Ollama · 3 rows · scale 1-5</text>
+</svg>

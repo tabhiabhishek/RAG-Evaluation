@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="440" rx="14" fill="#0f141a"/>
+  <rect x="0.5" y="0.5" width="1279" height="439" rx="14" fill="none" stroke="#2a323d"/>
+  <text x="40" y="52" font-size="22" font-weight="700" fill="#f3f4f6">How RAG Evaluation works</text>
+  <text x="40" y="78" font-size="14" fill="#9ca3af">Pick a prompt version → answer the eval questions → a local LLM judge scores each answer 1-5 → averages on a dashboard</text>
+
+  <g font-size="15">
+    <!-- 1 Prompt registry -->
+    <rect x="40" y="120" width="208" height="150" rx="12" fill="#161c24" stroke="#2a323d"/>
+    <rect x="40" y="120" width="208" height="6" rx="3" fill="#38bdf8"/>
+    <text x="144" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">1 · Prompt Registry</text>
+    <text x="144" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">prompts.yaml</text>
+    <text x="144" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">v1_basic · v2_strict</text>
+    <text x="144" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">load_prompt(version)</text>
+
+    <!-- 2 Eval dataset -->
+    <rect x="288" y="120" width="208" height="150" rx="12" fill="#161c24" stroke="#2a323d"/>
+    <rect x="288" y="120" width="208" height="6" rx="3" fill="#a78bfa"/>
+    <text x="392" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">2 · Eval Dataset</text>
+    <text x="392" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">3 built-in test cases</text>
+    <text x="392" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">question · context</text>
+    <text x="392" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">ground truth</text>
+
+    <!-- 3 Answers -->
+    <rect x="536" y="120" width="208" height="150" rx="12" fill="#161c24" stroke="#2a323d"/>
+    <rect x="536" y="120" width="208" height="6" rx="3" fill="#f59e0b"/>
+    <text x="640" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">3 · Answers</text>
+    <text x="640" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">Simulated per version</text>
+    <text x="640" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">v2_strict abstains with</text>
+    <text x="640" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">"I don't know…" off-context</text>
+
+    <!-- 4 Judge -->
+    <rect x="784" y="120" width="208" height="150" rx="12" fill="#161c24" stroke="#166534"/>
+    <rect x="784" y="120" width="208" height="6" rx="3" fill="#22c55e"/>
+    <text x="888" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">4 · LLM-as-a-Judge</text>
+    <text x="888" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">Ollama /api/generate</text>
+    <text x="888" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">qwen2.5 · format=json</text>
+    <text x="888" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">3 scores, 1-5 (0 on error)</text>
+
+    <!-- 5 Report -->
+    <rect x="1032" y="120" width="208" height="150" rx="12" fill="#161c24" stroke="#2a323d"/>
+    <rect x="1032" y="120" width="208" height="6" rx="3" fill="#ec4899"/>
+    <text x="1136" y="158" text-anchor="middle" font-weight="700" fill="#f3f4f6">5 · Aggregate &amp; Report</text>
+    <text x="1136" y="190" text-anchor="middle" font-size="13" fill="#9ca3af">pandas DataFrame</text>
+    <text x="1136" y="212" text-anchor="middle" font-size="13" fill="#9ca3af">mean per metric</text>
+    <text x="1136" y="234" text-anchor="middle" font-size="13" fill="#9ca3af">Streamlit metrics + table</text>
+  </g>
+
+  <g stroke="#4b5563" stroke-width="2" marker-end="url(#arr)">
+    <line x1="250" y1="195" x2="284" y2="195"/>
+    <line x1="498" y1="195" x2="532" y2="195"/>
+    <line x1="746" y1="195" x2="780" y2="195"/>
+    <line x1="994" y1="195" x2="1028" y2="195"/>
+  </g>
+
+  <!-- bottom layer -->
+  <rect x="40" y="310" width="1200" height="96" rx="12" fill="#121820" stroke="#2a323d" stroke-dasharray="6 6"/>
+  <text x="64" y="342" font-size="13" font-weight="700" fill="#9ca3af" letter-spacing="1">STACK</text>
+  <text x="1216" y="342" text-anchor="end" font-size="13" fill="#6b7280">Metrics: Faithfulness · Relevance · Context Precision</text>
+  <g font-size="14" font-weight="600">
+    <rect x="64"  y="356" width="180" height="34" rx="8" fill="#1e2630"/><text x="154" y="378" text-anchor="middle" fill="#d1d5db">Python 3.11+</text>
+    <rect x="256" y="356" width="180" height="34" rx="8" fill="#1e2630"/><text x="346" y="378" text-anchor="middle" fill="#d1d5db">Ollama · Qwen 2.5</text>
+    <rect x="448" y="356" width="180" height="34" rx="8" fill="#1e2630"/><text x="538" y="378" text-anchor="middle" fill="#d1d5db">requests (HTTP)</text>
+    <rect x="640" y="356" width="180" height="34" rx="8" fill="#1e2630"/><text x="730" y="378" text-anchor="middle" fill="#d1d5db">PyYAML</text>
+    <rect x="832" y="356" width="180" height="34" rx="8" fill="#1e2630"/><text x="922" y="378" text-anchor="middle" fill="#d1d5db">Pandas</text>
+    <rect x="1024" y="356" width="192" height="34" rx="8" fill="#1e2630"/><text x="1120" y="378" text-anchor="middle" fill="#d1d5db">Streamlit UI</text>
+  </g>
+</svg>

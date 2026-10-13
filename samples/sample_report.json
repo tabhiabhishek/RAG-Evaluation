@@ -1,0 +1,35 @@
+{
+  "_note": "Fictional example of run_evaluation('v2_strict') output (pandas DataFrame, orient='records'). Scores are on a 1-5 scale from the qwen2.5 judge; 0 means the judge call failed.",
+  "prompt_version": "v2_strict",
+  "averages": {
+    "Faithfulness": 5.0,
+    "Relevance": 4.33,
+    "Context Precision": 3.67
+  },
+  "rows": [
+    {
+      "Question": "What is the capital of France?",
+      "Context": "Paris is the capital and most populous city of France.",
+      "Answer": "Paris",
+      "Faithfulness": 5,
+      "Relevance": 5,
+      "Context Precision": 5
+    },
+    {
+      "Question": "Who invented the telephone?",
+      "Context": "The telephone was invented by Alexander Graham Bell in 1876.",
+      "Answer": "Alexander Graham Bell",
+      "Faithfulness": 5,
+      "Relevance": 5,
+      "Context Precision": 5
+    },
+    {
+      "Question": "What is the speed of light?",
+      "Context": "The Earth revolves around the sun.",
+      "Answer": "I don't know based on the provided context.",
+      "Faithfulness": 5,
+      "Relevance": 3,
+      "Context Precision": 1
+    }
+  ]
+}
