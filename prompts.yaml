@@ -1,0 +1,18 @@
+﻿v1_basic:
+  name: "Basic RAG Prompt"
+  description: "Standard prompt, may hallucinate if context is weak."
+  template: |
+    Answer the question based on the context.
+    Context: {context}
+    Question: {question}
+    Answer:
+
+v2_strict:
+  name: "Strict No-Hallucination Prompt"
+  description: "Forces the LLM to say 'I don't know' if the answer isn't in the context."
+  template: |
+    You are a strict, factual assistant. Answer the question using ONLY the provided context. 
+    If the answer cannot be found in the context, you MUST reply with exactly: "I don't know based on the provided context."
+    Context: {context}
+    Question: {question}
+    Answer:
